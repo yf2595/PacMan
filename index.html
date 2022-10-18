@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="./jquery-3.4.1.slim.min.js"></script>
+		<link rel="stylesheet" type="text/css"  href="style.css" /> 
+
+	</head>
+
+	<body>
+		
+		<!-- header div -->
+		<div id="header">
+			<img id="header-img3" src="images/pacLogo2.jpg" />
+			<br>
+			<strong id="writers">Yuval felendler & Amit partuk</strong>
+		</div>
+
+		<!-- menu div -->
+		<nav>
+			<a href="#welcome" onclick="welcome()"><b>Welcome</b></a>
+			<a href="#Register" onclick="showRegister()"><b>Register</b></a>
+			<a href="#Login" onclick="showLogin()"><b>Login</b></a>
+			<a href="#about" onclick="showAbout()"><b>About</b></a>
+			<a href="#footer"><b>Contact</b></a>
+			<div class="animation start-home"></div>
+		</nav>
+
+		<!-- wlecome div -->
+		<div id="welcome" >
+			<h1 id="welcome-header"> Welcome to the best Pac-man game!!</h1>
+			<input type="button" id="btnShowRegister" value="Register" onclick="showRegister()" />
+			<input type="button" id="btnShowLogin" value="Login" onclick="showLogin()" />
+
+		</div>
+
+		<!-- register div -->
+		<div id="Register">
+			<div class="Rtitle">Sign up</div>
+			<div class="Rsubtitle">Let's create your account!</div>
+
+			<div class="Rinput-container Ric1">
+			  <input id="username" class="Rinput" type="text" placeholder=" " />
+			  <div class="Rcut"></div>
+			  <label for="username" class="Rplaceholder">User name</label>
+			</div>
+
+
+			<div class="Rinput-container Ric2">
+			  <input id="password" class="Rinput" type="password" placeholder=" " autocomplete="off" />
+			  <div class="Rcut"></div>
+			  <label for="password" class="Rplaceholder">Password</label>
+			</div>
+
+
+			<div class="Rinput-container Ric2">
+			  <input id="fullname" class="Rinput" type="text" placeholder=" " />
+			  <div class="Rcut Rcut-short"></div>
+			  <label for="fullname" class="Rplaceholder">Full name</label>
+			</div>
+
+
+			<div class="Rinput-container Ric2">
+				<input id="mail" class="Rinput" type="text" placeholder=" " />
+				<div class="Rcut Rcut-short"></div>
+				<label for="mail" class="Rplaceholder">Email</label>
+			</div>
+
+
+			<div class="Rinput-container Ric2">
+				<input id="date" class="Rinput" type="date" placeholder=" " />
+				<div class="Rcut Rcut-short"></div>
+				<label for="Rdate" class="Rplaceholder">Date of birth</label>
+			</div>
+
+
+			<button type="text" class="Rsubmit" onclick="registerComplete()">submit</button>
+
+		  </div>
+
+		<!-- under register div - go to login  -->
+		  <div id="alredySignin" class="AlredySignin"  hidden>
+			<p>Already have an account? <a href="#Login" onclick="showLogin()">Sign in</a>.</p>
+		</div>
+
+		<!-- choose settings div -->
+		<div id="ChangeSettings">
+			<div class="Rtitle">Change Settings</div>
+			<div class="Rsubtitle">Let's create your account!</div>
+
+			<div class="Rinput-container Ric1">
+			  <input  class="Rinput" type="text" id="up" placeholder="" name="up" maxlength="1" autocomplete="off" required />
+			  <div class="Rcut"></div>
+			  <label for="up" class="Rplaceholder">ArrowUp</label>
+			</div>
+			<div class="Rinput-container Ric2">
+			  <input class="Rinput" type="text" id="down" placeholder="" name="down" maxlength="1" autocomplete="off" required/>
+			  <div class="Rcut"></div>
+			  <label for="down" class="Rplaceholder">ArrowDown</label>
+			</div>
+			<div class="Rinput-container Ric2">
+			  <input class="Rinput" type="text" id="right" placeholder="" name="right" maxlength="1" autocomplete="off" required />
+			  <div class="Rcut Rcut-short"></div>
+			  <label for="right" class="Rplaceholder">ArrowRight</label>
+			</div>
+			<div class="Rinput-container Ric2">
+				<input class="Rinput"type="text" id="left" placeholder="" name="left" maxlength="1" autocomplete="off" required />
+				<div class="Rcut Rcut-short"></div>
+				<label for="left" class="Rplaceholder">ArrowLeft</label>
+			</div>
+			<div class="Rinput-container Ric2">
+				<input class="Rinput" type="number" id="amountFoodSettings" placeholder="" name="amountFoodSettings" maxlength="2" autocomplete="off" min="50" max="90" required/>
+				<div class="Rcut Rcut-short"></div>
+				<label for="amountFoodSettings" class="Rplaceholder">Amount of food</label>
+			</div>
+			<div class="Rsubtitle">Food Colors</div>
+			<div class="Rinput-container Ric1">
+				<input  class="Rinput" type="color" id="color5_points" name="color5_points" autocomplete="off" />
+				<div class="Rcut"></div>
+				<label for="color5_points" class="Rplaceholder">5 points</label>
+			  </div>
+			  <div class="Rinput-container Ric2">
+				<input class="Rinput" type="color" id="color15_points" name="color15_points" autocomplete="off"/>
+				<div class="Rcut"></div>
+				<label for="color15_points" class="Rplaceholder">15 points</label>
+			  </div>
+			  <div class="Rinput-container Ric2">
+				<input class="Rinput" type="color" id="color25_points" name="color25_points" autocomplete="off" />
+				<div class="Rcut Rcut-short"></div>
+				<label for="color25_points" class="Rplaceholder">25 points</label>
+			  </div>
+			  <div class="Rinput-container Ric2">
+				  <input class="Rinput" type="number" id="time_settings" placeholder="" name="time_settings" autocomplete="off" min="60" required/>
+				  <div class="Rcut Rcut-short"></div>
+				  <label for="time_settings" class="Rplaceholder">Time(sec)</label>
+			  </div>
+			  <div class="Rinput-container Ric2">
+				  <input class="Rinput" type="number" id="monsters_amount_settings" placeholder="" name="monsters_amount_settings" autocomplete="off" min="1" max="4" required/>
+				  <div class="Rcut Rcut-short"></div>
+				  <label for="monsters_amount_settings" class="Rplaceholder">Amount of Monsters</label>
+			  </div>
+
+			<button type="text" id="random_setting" class="Rsubmit" onclick="random_settings()">Random</button>
+			<button type="text" class="Rsubmit" onclick="confirmation()">Continue</button>
+
+		  </div>
+
+		<!-- Login div -->
+		<div id="Login" >
+			<div class="Ltitle">Login</div>
+			<div class="Lsubtitle">Welcome back!</div>
+			<div class="Linput-container Lic1">
+			  <input id="userLogin" class="Linput" type="text" placeholder=" " />
+			  <div class="Lcut"></div>
+			  <label for="userLogin" class="Lplaceholder">User name</label>
+			</div>
+			<br>
+			<br>
+
+			<div class="Linput-container Lic2">
+			  <input id="pswLogin" class="Linput" type="password" placeholder=" " />
+			  <div class="Lcut"></div>
+			  <label for="pswLogin" class="Lplaceholder">Password</label>
+			</div>
+
+			<button type="text" class="Lsubmit" onclick="login()">Enter</button>
+		  </div>
+
+		<div id="Unregistered" class="Unregistered" hidden >
+			<p>Does not have an account? <a href="#Register" onclick="showRegister()">Register now</a></p>
+		</div>
+
+
+
+
+
+		<!-- about model -->
+		<div id="about" class="modal">
+			<div class="modal-content">
+			  <span class="close" onclick="closeModel()">&times;</span>
+			  <div class="about-section">
+				<h1 id="about-header">About Us</h1>
+				<p class="about-p">IN this work, we build pacman game using HTML,CSS,JS.</p> 
+				<p class="about-p">During the work we user JQurey for almost the entire code spicialelly when we neede an intercation with the index.html and the style.css files to get the elemnts and change them</p>
+				<p class="about-p">We used templates for the Menu bar, the buttons and the about window. we changed them a bit but the style is reused.</p>
+				<p class="about-p">During the work, we had some difficulties regarding the game logic- spically to move the monsters and create the random game.</p>
+				</div>
+			  
+			  <h2 style="text-align:center">Our Team</h2>
+			  <div class="row">
+				<div class="column">
+				  <div class="card">
+					<img class="id-img" src="images/Yuval.jpeg" alt="Yuval" style="width:100%">
+					<div class="container1">
+					  <h2>Yuval Felendler</h2>
+					  <p class="title">RT Software engineer at Elbit</p>
+					  <p>3rd year B.Sc at information systems and software engineering in BGU  </p>
+					  <p>Yuvalf301@gmail.com</p>
+					</div>
+				  </div>
+				</div>
+			  
+				<div class="column">
+				  <div class="card">
+					<img class="id-img" src="images/Amit.jpeg" alt="Amit" style="width:100%">
+					<div class="container1">
+					  <h2>Amit Partuk</h2>
+					  <p class="title">Software engineer at Elbit</p>
+					  <p>3rd year B.Sc at information systems and software engineering in BGU </p>
+					  <p>Amit@gmail.com</p>
+					</div>
+				  </div>
+				</div>
+			</div>
+		  </div>
+		</div>
+
+			
+
+		<!-- game table div -->
+		<div>
+			<table id="game-table">
+				<tr>
+					<td>
+						<!-- life div -->
+						<div id="life" hidden >
+							<img id="life1" src="images/life.png">
+							<img id="life2" src="images/life.png">
+							<img id="life3" src="images/life.png">
+							<img id="life4" src="images/life.png">
+							<img id="life5" src="images/life.png">	
+						</div>
+						<!-- score div -->
+
+						<div id="score" hidden >
+							<label class="user-label" id="scorelabel" for="lblScore">SCORE:</label>
+							<input class="lbl" id="lblScore" type="text" />
+						</div>
+
+						<!-- time div -->
+						<div id="time" hidden >
+							<label class="user-label" id="timelabel" for="lblTime">TIME:</label>
+							<input class="lbl" id="lblTime" type="text" />
+						</div>
+
+						<!-- name div -->
+						<div id="userName" hidden >
+							<label class="user-label" for="lblUser">PLAYER:</label>
+							<input class="lbl" id="lblUser" type="text" />
+						</div>
+
+						<!-- settings div -->
+						<div id="Confirmation_settings" hidden>
+							<span id="lbl_settings">
+								<lable>up: </lable>
+								<lable id="up_conf"></lable>
+								<br/>
+								<lable>down: </lable>
+								<lable id="down_conf"></lable>
+								<br/>
+								<lable>right: </lable>
+								<lable id="right_conf"></lable>
+								<br/>
+								<lable>left: </lable>
+								<lable id="left_conf"></lable>
+								<br/>
+								<lable>food: </lable>
+								<lable id="food_conf"></lable>
+								<br/>
+								<lable>5 points: </lable>
+								<lable id="points5_conf"> color</lable>
+								<br/>
+								<lable>15 points: </lable>
+								<lable id="points15_conf"> color</lable>
+								<br/>
+								<lable>25 points: </lable>
+								<lable id="points25_conf"> color</lable>
+								<br/>
+								<lable>time: </lable>
+								<lable id="time_conf"></lable>
+								<br/>
+								<lable>monsters: </lable>
+								<lable id="monsters_conf"></lable>
+								<br/>
+							</span>
+
+						</div>
+						
+						<!-- settings buttons div -->
+						<div id="setting_button" hidden>
+							<p>
+								<button class="button-19" type="button" onclick="f_ChangeSettings()">back</button>
+								<button class="button-19" type="button" onclick="random_settings()">random</button>
+								<button class="button-19" type="button" onclick="saveSettings()" id="startBTN">start</button>		
+							</p>
+						</div>
+
+						<!-- new game button div -->
+						<div id="newGame_button" hidden>
+							<br/>
+							<button class="button-19" onclick="f_ChangeSettings()">New Game</button>
+						</div>
+					</td>
+					<td rowspan="2">
+						<!-- game div - canvas -->
+						<div id="game" hidden>
+							<canvas id="canvas" height="715" width="715" ></canvas>
+						</div>
+					</td>
+				</tr>
+
+			</table>
+
+		</div>
+
+		<!-- footer div -->
+		<div id="footer">
+			<h2 id="footer-header">Thank you for playing pacMan 2.0</h2>
+			<p id="footer-by">
+				By <span id="footer-span">Amit&Yuval</span>
+			</p>
+			<a id="btn-footer" class="btn" href="mailto:yuvalf301@gmail.com">CONTACT US</a>
+			<br>
+			<br>
+
+		</div>
+
+
+
+
+
+
+		
+		<script type="text/javascript" src="app.js"></script>
+
+	</body>
+</html>
